@@ -1,3 +1,3 @@
-## SPPyS
+# SPPyS
 
-# Satellite Peak Python Suite
+Satellite Peak Python Suite
