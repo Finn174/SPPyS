@@ -1,1 +1,3 @@
-# Neutron-Diffraction
+## SPPyS
+
+# Satellite Peak Python Suite
