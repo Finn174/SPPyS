@@ -28,5 +28,7 @@
     "shift_x_bounds": [-0.015, 0.015],
     "shift_y_bounds": [-0.015, 0.015],
     "shift_x_sub_bounds": [-0.005, 0.005],
-    "shift_y_sub_bounds": [-0.005, 0.005]
+    "shift_y_sub_bounds": [-0.005, 0.005],
+    "In_Range": [-0.02, 0.02],
+    "Out_Range": [0.48, 0.52]
 }
