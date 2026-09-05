@@ -149,7 +149,7 @@ def plot_simulation(
         ys,
         image,
         cmap="inferno",
-        levels=9,
+        levels=20,
         vmin=params.background,
         vmax=plot_max,
     )
