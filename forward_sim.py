@@ -9,6 +9,7 @@ python forward_sim.py paramter_file.json
 """
 
 import sys
+import os
 import matplotlib.pyplot as plt
 
 from data_io import load_parameters, save_csv
@@ -38,7 +39,7 @@ def forward_sim():
 
     parameter_filename = sys.argv[1]
 
-    output_filename = parameter_filename.split('/')[-1]
+    output_filename = os.path.basename(parameter_filename)
 
 
     # ----------------------------------------------------
@@ -90,12 +91,7 @@ def forward_sim():
 
     if save_csv_choice.lower() == "y":
 
-        output_name_csv = (
-            output_filename.replace(
-                ".json",
-                ".csv"
-            )
-        )
+        output_name_csv = (f"forward_sim_{output_filename.replace('.json', '.csv')}")
 
         save_csv(
             output_name_csv,
