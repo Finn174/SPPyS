@@ -23,5 +23,7 @@
     "Sub_peak": null,
     "FWHM_s_long": null,
     "FWHM_s_short": null,
-    "axis_compress": 1
+    "axis_compress": 1,
+    "In_Range": [0.48, 0.52],
+    "Out_Range": [-0.48, -0.52]
 }
