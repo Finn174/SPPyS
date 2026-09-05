@@ -6,6 +6,7 @@ to experimental data.
 """
 
 import sys
+import os
 import numpy as np
 
 from geometry import splitting_is_resolvable
@@ -284,8 +285,8 @@ def fit_to_data():
         fit_parameters
     )
 
-    filename = parameter_file.split('/')[-1].replace('.json', '')
-    output_file = f"fit_result_{filename}.json"
+    filename = os.path.basename(parameter_file)
+    output_file = f"fit_result_{filename}"
 
     save_parameters(
         output_file,
