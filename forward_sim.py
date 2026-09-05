@@ -5,7 +5,7 @@ Functions for generating a simulated reciprocal-space map.
 
 Usage
 -----
-python main.py paramter_file.json
+python forward_sim.py paramter_file.json
 """
 
 import sys
@@ -36,7 +36,9 @@ def forward_sim():
         )
 
 
-    filename = sys.argv[1]
+    parameter_filename = sys.argv[1]
+
+    output_filename = parameter_filename.split('/')[-1]
 
 
     # ----------------------------------------------------
@@ -44,7 +46,7 @@ def forward_sim():
     # ----------------------------------------------------
 
     params = load_parameters(
-        filename
+        parameter_filename
     )
 
 
@@ -88,24 +90,24 @@ def forward_sim():
 
     if save_csv_choice.lower() == "y":
 
-        output_name = (
-            filename.replace(
+        output_name_csv = (
+            output_filename.replace(
                 ".json",
                 ".csv"
             )
         )
 
         save_csv(
-            output_name,
+            output_name_csv,
             xs,
             ys,
             image,
         )
 
-        print(f"Saved {output_name}")
+        print(f"Saved {output_name_csv}")
 
 
-    plt.savefig(f"forward_sim_{filename.replace('.json', '.png')}", dpi=150, bbox_inches='tight')
+    plt.savefig(f"forward_sim_{output_filename.replace('.json', '.png')}", dpi=150, bbox_inches='tight')
 
     plt.show()
 
