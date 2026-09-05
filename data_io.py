@@ -646,9 +646,9 @@ def save_csv(
     df = pd.DataFrame(
         data,
         columns=[
-            "X",
-            "Y",
-            "Z",
+            "Q_in",
+            "Q_out",
+            "Intensity",
         ],
     )
 
