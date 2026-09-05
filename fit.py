@@ -94,7 +94,7 @@ def residuals(
 
 def jacobian_function(current_values, params, fit_parameters, xs, ys, experimental, mask):
     """
-    alculates the Jacobian using a central difference method.
+    Calculates the Jacobian using a central difference method.
     """
 
     jac = np.zeros((np.sum(mask), len(fit_parameters)))
