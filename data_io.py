@@ -92,9 +92,9 @@ def load_parameters(filename):
 
         sgl_width=p["sgl_width"],
 
-        In_Range=p.get("In_Range", (0.48, 0.52)),
+        In_Range=p.get("In_Range", None),
 
-        Out_Range=p.get("Out_Range", (0.48, 0.52)),
+        Out_Range=p.get("Out_Range", None),
 
         shift_x=p.get("shift_x", 0),
         shift_x_bounds = p.get("shift_x_bounds", [None, None]),
