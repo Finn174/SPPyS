@@ -207,6 +207,39 @@ def generate_grid(params, npoints=100):
     xs, ys
     """
 
+    if params.In_Range is None or params.Out_Range is None:
+        if params.Sub_peak is None:
+            
+            peak1, peak2 = projected_peaks(params)
+            
+            substrate = None
+            
+        else:
+            
+            peak1, peak2, substrate = projected_peaks(params)
+
+        
+        _, u, v = plane_basis(
+            params.Qin,
+            params.Qout,
+        )
+        
+        Qin_length = np.linalg.norm(params.Qin)
+        Qout_length = np.linalg.norm(params.Qout)
+
+        X1, Y1 = xy_in_plane(peak1, u, v)
+        X2, Y2 = xy_in_plane(peak2, u, v)
+    
+        X1 /= Qin_length
+        X2 /= Qin_length
+    
+        Y1 /= Qout_length
+        Y2 /= Qout_length
+
+        params.update(In_Range=(min(X1, X2) - 0.02, max(X1, X2) + 0.02))
+        params.update(Out_Range=(min(Y1, Y2) - 0.02, max(Y1, Y2) + 0.02))
+
+    
     xs, ys = np.meshgrid(
         np.linspace(
             params.In_Range[0],
